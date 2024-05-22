@@ -1,14 +1,11 @@
-package main;
-
-import entidades.ListaPacientes;
+import repositorio.ListaPacientes;
 import entidades.Paciente;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static entidades.ListaPacientes.*;
+import static repositorio.ListaPacientes.*;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
