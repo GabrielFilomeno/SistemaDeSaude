@@ -94,4 +94,8 @@ public class Paciente {
     public void setAtividadesFisicas(List<String> atividadesFisicas) {
         this.atividadesFisicas = atividadesFisicas;
     }
+
+    public void addAtividadesFisicas(String atividadesFisicas) {
+        this.atividadesFisicas.add(atividadesFisicas);
+    }
 }

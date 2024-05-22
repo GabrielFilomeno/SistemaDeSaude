@@ -43,19 +43,43 @@ public class ListaPacientes {
         }
     }
 
-    public static Paciente buscarPorId(int id) {
+    public static Paciente buscarPorId(int id, Scanner scan) {
         if (id >= 0 && id < listaPacientes.size()) {
             return listaPacientes.get(id);
         } else {
-            System.out.println("ID inválido. Por favor, tente novamente.");
-            return null;
-        }
+                return null;
+            }
     }
 
     public static void alterarDados(Scanner scan) {
         System.out.println("Digite o ID do paciente que deseja alterar os dados:");
-        int id = scan.nextInt();
-        Paciente paciente = buscarPorId(id);
+            int id = scan.nextInt();
+        while (true) {
+            if (id >= 0 && id < listaPacientes.size()) {
+            break;
+            } else {
+                System.out.println("ID invalido.");
+                System.out.println("1 - Digite novamente.");
+                System.out.println("2 - Voltar");
+                int digitarNovamente = scan.nextInt();
+
+                if (digitarNovamente != 1){
+                    System.out.println("Você voltou para tela inicial.");
+                    break;
+                }
+            }
+            System.out.println();
+            System.out.println("Digite o ID novamente.");
+            id = scan.nextInt();
+        }
+            Paciente paciente = buscarPorId(id, scan);
+        if (paciente == null) {
+            System.out.print("Você voltou para a tela inicial.");
+            return;
+        }
+        System.out.println("Paciente selecionado: ");
+        System.out.println("ID: " + id + " - Nome: " + paciente.getNome());
+
         if (paciente != null) {
             System.out.println("Digite o novo peso:");
             double peso = scan.nextDouble();
