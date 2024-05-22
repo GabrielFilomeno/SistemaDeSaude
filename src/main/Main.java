@@ -216,6 +216,29 @@ public class Main {
     public static void telaRemover() {
         System.out.print("Digite o id do paciente que deseja remover: ");
         int id = scan.nextInt();
+        while (true) {
+            if (id >= 0 && id < getListaPacientes().size()) {
+                break;
+            } else {
+                System.out.println("ID invalido.");
+                System.out.println("1 - Digite novamente.");
+                System.out.println("2 - Voltar");
+                int digitarNovamente = scan.nextInt();
+
+                if (digitarNovamente != 1){
+                    System.out.println("Você voltou para tela inicial.");
+                    break;
+                }
+            }
+            System.out.println();
+            System.out.println("Digite o ID novamente.");
+            id = scan.nextInt();
+        }
+        Paciente paciente = buscarPorId(id, scan);
+        if (paciente == null) {
+            System.out.print("Você voltou para a tela inicial.");
+            return;
+        }
         ListaPacientes.removerPaciente(id, scan);
         System.out.println("");
     }
