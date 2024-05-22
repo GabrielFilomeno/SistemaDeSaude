@@ -58,8 +58,10 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("digite novamente");
+                    System.out.println("Número incorreto, volte e tente novamente.");
                     System.out.println();
+                    System.out.println("1 - Voltar");
+                    int voltar = scan.nextInt();
                     continue;
             }
             break;
