@@ -57,14 +57,6 @@ public class ListaPacientes {
         int id = scan.nextInt();
         Paciente paciente = buscarPorId(id);
         if (paciente != null) {
-            System.out.println("Digite o novo nome:");
-            String nome = scan.next();
-            paciente.setNome(nome);
-
-            System.out.println("Digite a nova idade:");
-            int idade = scan.nextInt();
-            paciente.setIdade(idade);
-
             System.out.println("Digite o novo peso:");
             double peso = scan.nextDouble();
             paciente.setPeso(peso);
@@ -85,17 +77,9 @@ public class ListaPacientes {
             String dietaAlimentar = scan.next();
             paciente.setDietaAlimentar(dietaAlimentar);
 
-            System.out.println("Quantas atividades físicas você deseja adicionar?");
-            int numAtividades = scan.nextInt();
-            List<String> atividadesFisicas = new ArrayList<>();
-            for (int i = 0; i < numAtividades; i++) {
-                System.out.println("Digite a atividade física " + (i + 1) + ":");
-                String atividade = scan.next();
-                atividadesFisicas.add(atividade);
-            }
-            paciente.setAtividadesFisicas(atividadesFisicas);
-
             System.out.println("Dados do paciente atualizados com sucesso!");
+            System.out.println("1 - Voltar");
+            int voltar = scan.nextInt();
         } else {
             System.out.println("Paciente não encontrado.");
         }
