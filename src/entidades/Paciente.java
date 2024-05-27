@@ -14,6 +14,28 @@ public class Paciente {
     private String dietaAlimentar;
     private List<String> atividadesFisicas = new ArrayList<>();
 
+    public Paciente(){
+    }
+
+    public Paciente(String nome,
+                    int idade,
+                    double peso,
+                    double altura,
+                    double pressaoArterial,
+                    double frequenciaCardiaca,
+                    String dietaAlimentar,
+                    List<String> atividadesFisicas) {
+
+        this.nome = nome;
+        this.idade = idade;
+        this.peso = peso;
+        this.altura = altura;
+        this.pressaoArterial = pressaoArterial;
+        this.frequenciaCardiaca = frequenciaCardiaca;
+        this.dietaAlimentar = dietaAlimentar;
+        this.atividadesFisicas = atividadesFisicas;
+    }
+
     public double calcularImc(){
         double imc = peso / (altura * altura);
         return imc;

@@ -9,9 +9,13 @@ import java.util.Scanner;
 public class ListaPacientes {
     private static List<Paciente> listaPacientes = new ArrayList<>();
 
-    public static List<Paciente> getListaPacientes() {
-        return listaPacientes;
+    public ListaPacientes() {
     }
+
+    public ListaPacientes(List<Paciente> listaPacientes) {
+        this.listaPacientes = listaPacientes;
+    }
+
 
     public static void addPaciente(Paciente paciente) {
         listaPacientes.add(paciente);
@@ -110,6 +114,8 @@ public class ListaPacientes {
             System.out.println("Paciente não encontrado.");
         }
     }
-
-
+    
+    public static List<Paciente> getListaPacientes() {
+        return listaPacientes;
+    }
 }
