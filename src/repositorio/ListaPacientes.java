@@ -114,7 +114,7 @@ public class ListaPacientes {
             System.out.println("Paciente não encontrado.");
         }
     }
-    
+
     public static List<Paciente> getListaPacientes() {
         return listaPacientes;
     }
