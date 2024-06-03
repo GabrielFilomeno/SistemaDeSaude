@@ -25,16 +25,27 @@ public class ListaNutricionistas {
         listaNutricionista.add(nutricionista);
     }
 
+
+    public static String toString(Endereco endereco) {
+
+        return "Logradouro: " + endereco.getLogradouro() +
+                " / Estado: " + endereco.getEstado() +
+                " / Cidade: " + endereco.getCidade() +
+                " / Numero: " + endereco.getNumero() +
+                " / CEP: " + endereco.getCep();
+    }
+
     public static void listarNutricionista() {
         for (int i = 0; i < listaNutricionista.size(); i++) {
             System.out.println("ID do nutricionista: " + i);
             System.out.println("Nome do nutricionista: " + listaNutricionista.get(i).getNome());
             System.out.println("Idade do nutricionista: " + listaNutricionista.get(i).getIdade());
             System.out.println("Salario do nutricionista: " + listaNutricionista.get(i).getSalario());
-            System.out.println("Endereço do nutricionista: " + listaNutricionista.get(i).getEndereco());
+            System.out.println("Endereço do nutricionista: " + toString(listaNutricionista.get(i).getEndereco()));
             System.out.println("Certificações do nutricionista: " + listaNutricionista.get(i).getCertificacoes());
             System.out.println("Numero de consultas do nutricionista: " + listaNutricionista.get(i).getNumeroConsultas());
             System.out.println("Tempo de experiência do nutricionista: " + listaNutricionista.get(i).getTempoExperiencia());
+            System.out.println("-------------------------------------------");
         }
     }
 
@@ -99,22 +110,23 @@ public class ListaNutricionistas {
             nutricionista.setNome(nomeNutricionista);
 
             System.out.println("Digite a idade do nutricionista:");
-            scan.nextLine();
             int idadeNutricionista = scan.nextInt();
             nutricionista.setIdade(idadeNutricionista);
 
             System.out.println("Digite o salario do nutricionista:");
-            scan.nextLine();
             double salarioNutricionista = scan.nextDouble();
             nutricionista.setSalario(salarioNutricionista);
 
             System.out.println("Digite o endereço do nutricionista:");
             System.out.println("Logradouro: ");
-            String logradouro = scan.next();
+            scan.nextLine();
+            String logradouro = scan.nextLine();
             System.out.println("Estado: ");
-            String estado = scan.next();
+            scan.nextLine();
+            String estado = scan.nextLine();
             System.out.println("Cidade: ");
-            String cidade = scan.next();
+            scan.nextLine();
+            String cidade = scan.nextLine();
             System.out.println("Numero: ");
             int numero = scan.nextInt();
             System.out.println("cep: ");

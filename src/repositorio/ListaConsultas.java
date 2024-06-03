@@ -109,6 +109,7 @@ public class ListaConsultas {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
             LocalDateTime dataHora = LocalDateTime.parse(dataHoraString, formatter);
+            consulta.setDataHora(dataHora);
 
             System.out.println("A consulta ja foi realizada?");
             System.out.println("1 - Sim");

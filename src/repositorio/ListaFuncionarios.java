@@ -23,13 +23,23 @@ public class ListaFuncionarios {
         listaFuncionarios.add(funcionario);
     }
 
+    public static String toString(Endereco endereco) {
+
+        return "Logradouro: " + endereco.getLogradouro() +
+                " / Estado: " + endereco.getEstado() +
+                " / Cidade: " + endereco.getCidade() +
+                " / Numero: " + endereco.getNumero() +
+                " / CEP: " + endereco.getCep();
+    }
+
     public static void listarFuncionarios() {
         for (int i = 0; i < listaFuncionarios.size(); i++) {
             System.out.println("ID do funcionario: " + i);
             System.out.println("Nome do funcionario: " + listaFuncionarios.get(i).getNome());
             System.out.println("Idade do funcionario: " + listaFuncionarios.get(i).getIdade());
             System.out.println("Salario do funcionario: " + listaFuncionarios.get(i).getSalario());
-            System.out.println("Endereço do funcionario: " + listaFuncionarios.get(i).getEndereco());
+            System.out.println("Endereço do funcionario: " + toString(listaFuncionarios.get(i).getEndereco()));
+            System.out.println("-------------------------------------------");
         }
     }
 
@@ -94,22 +104,23 @@ public class ListaFuncionarios {
             funcionario.setNome(nomeFuncionario);
 
             System.out.println("Digite a idade do funcionario:");
-            scan.nextLine();
             int idadeFuncionario = scan.nextInt();
             funcionario.setIdade(idadeFuncionario);
 
             System.out.println("Digite o salario do funcionario:");
-            scan.nextLine();
             double salarioFuncionario = scan.nextDouble();
             funcionario.setSalario(salarioFuncionario);
 
             System.out.println("Digite o endereço do funcionario:");
             System.out.println("Logradouro: ");
-            String logradouro = scan.next();
+            scan.nextLine();
+            String logradouro = scan.nextLine();
             System.out.println("Estado: ");
-            String estado = scan.next();
+            scan.nextLine();
+            String estado = scan.nextLine();
             System.out.println("Cidade: ");
-            String cidade = scan.next();
+            scan.nextLine();
+            String cidade = scan.nextLine();
             System.out.println("Numero: ");
             int numero = scan.nextInt();
             System.out.println("cep: ");
